@@ -11,7 +11,7 @@ const Phones = ({Phones}) => {
              
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     {
-                        Phones.map(singlePhone=><Phone singlePhone={singlePhone}></Phone>)
+                        Phones.map(singlePhone=><Phone singlePhone={singlePhone} key={singlePhone.id}></Phone>)
                     }
                 </div>
             </div>

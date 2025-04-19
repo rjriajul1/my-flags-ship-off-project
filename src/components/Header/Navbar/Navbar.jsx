@@ -18,7 +18,7 @@ const Navbar = () => {
             <h1 className='font-bold text-2xl '>FlagshipFaceOff</h1>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-55 w-52 p-2 shadow">
              <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'}  to='/'>Home</NavLink></li>
             <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'}  to='/about' >About</NavLink></li>
             <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'} to='/cart' ><IoMdCart size={25}/></NavLink></li>

@@ -11,7 +11,7 @@ const Banner = () => {
             of the current time - FlagshipFaceOff</p>
             <form className='text-center flex justify-center gap-6'>
                 <input type="text"  className='border w-1/2 p-2 rounded-2xl outline-0 border-gray-500 shadow' placeholder='Search Phone by Name' />
-               <button className=''><Button name={"Search"}></Button> </button>
+               <Button name={"Search"}></Button> 
             </form>
         </div>
     );
