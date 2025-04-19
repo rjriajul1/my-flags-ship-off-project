@@ -8,7 +8,7 @@ import { IoBookmarkSharp } from "react-icons/io5";
 
 const Navbar = () => {
     return (
-        <div className=" flex items-center justify-between bg-base-100 shadow-sm">
+        <div className=" px-3 py-2 md:px-10 flex items-center justify-between bg-base-100 shadow-sm">
         <div className="">
           <div className="dropdown flex items-center gap-6">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle lg:hidden">
