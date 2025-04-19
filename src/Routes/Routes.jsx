@@ -7,6 +7,8 @@ import About from "../Pages/about/About";
 import Favorite from "../Pages/favorite/Favorite";
 import Cart from "../Pages/cart/Cart";
 import PhoneDetails from "../Pages/phoneDetails/PhoneDetails";
+import ErrorMessage from "../Pages/ErrorMessage";
+
 
 
 
@@ -14,9 +16,11 @@ import PhoneDetails from "../Pages/phoneDetails/PhoneDetails";
     {
       path: "/",
       Component:Root,
+      errorElement:<ErrorMessage/>,
       children:[
         {
          path:'/',
+         hydrateFallbackElement:<p>Loading....</p>,
          loader:()=> fetch('../Phones.json'),
          Component:Home
         },
@@ -32,6 +36,7 @@ import PhoneDetails from "../Pages/phoneDetails/PhoneDetails";
         },
         {
           path:'/favorite',
+          loader:()=> fetch('../Phones.json'),
           Component:Favorite
         },
         {

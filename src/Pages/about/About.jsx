@@ -8,7 +8,7 @@ const About= () => {
   
     return (
        <div>
-         <div className='grid md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto gap-8 py-10'>
+         <div className='grid md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto gap-8 py-10 p-4'>
             {
                 data.map((singleAbout,index)=>(
                  <div key={index} className='border   duration-100 hover:scale-110 rounded-xl p-6'>
