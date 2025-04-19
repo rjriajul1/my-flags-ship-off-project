@@ -16,6 +16,7 @@ import Cart from "../Pages/cart/Cart";
       children:[
         {
          path:'/',
+         loader:()=> fetch('Phones.json'),
          Component:Home
         },
         {
