@@ -27,6 +27,7 @@ import PhoneDetails from "../Pages/phoneDetails/PhoneDetails";
         },
         {
           path:'about',
+          loader: ()=>fetch('../about.json'),
           Component:About
         },
         {
