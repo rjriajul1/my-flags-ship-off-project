@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import Button from '../../Utilies/Button/Button';
 import { IoCartOutline } from 'react-icons/io5';
 import { IoIosBookmark } from 'react-icons/io';
-import { addLocalStored } from '../../Utilies/LocalStorage';
+import { addLocalStored, addToCart } from '../../Utilies/LocalStorage';
+import { CartContext } from '../../Provider/Context';
 
 const PhoneDetails = () => {
+  const [cart,setCart] = useContext(CartContext)
     const {id}= useParams()
     const convertedId = parseInt(id)
     const data = useLoaderData()
@@ -18,6 +20,14 @@ const PhoneDetails = () => {
     addLocalStored(id)
 
   }
+  const handleCart = (id) =>{
+    
+    addToCart(id)
+   setCart([...cart,specificPhone.id])
+
+  }
+
+
  
     return (
         <div className='py-20 max-w-7xl mx-auto p-4'>
@@ -27,7 +37,7 @@ const PhoneDetails = () => {
            <div className='flex py-4 items-center justify-between'>
             <h1 className='font-thin text-4xl lg:text-5xl'>{name}</h1>
            <div className='space-x-3'>
-           <div><Button name={<IoCartOutline />}/></div>
+           <div onClick={()=>handleCart(id)}><Button name={<IoCartOutline />}/></div>
           <div onClick={()=>handleBookMark(specificPhone.id)}> <Button  name={<IoIosBookmark />}/></div>
            </div>
            </div>

@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router';
 import { IoMdCart } from "react-icons/io";
 import { IoBookmarkSharp } from "react-icons/io5";
+import { CartContext } from '../../../Provider/Context';
 
 
 
 
 const Navbar = () => {
+
+  const[cart] = useContext(CartContext);
+  
     return (
         <div className=" px-3 py-2 md:px-10 flex items-center justify-between bg-base-100 shadow-sm">
         <div className="">
@@ -32,7 +36,10 @@ const Navbar = () => {
          <ul className='flex gap-5'>
             <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'}  to='/'>Home</NavLink></li>
             <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'}  to='/about' >About</NavLink></li>
-            <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'} to='/cart' ><IoMdCart size={25}/></NavLink></li>
+            <li className='relative'>
+            <p className='absolute -top-3 -right-2'>{cart.length}</p>
+              <NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'} to='/cart' ><IoMdCart size={25}/></NavLink>
+            </li>
             <li><NavLink className={({isActive})=> isActive? 'btn btn-success text-white':'btn'} to='/favorite' ><IoBookmarkSharp size={25}/></NavLink></li>
          </ul>
         </div>
