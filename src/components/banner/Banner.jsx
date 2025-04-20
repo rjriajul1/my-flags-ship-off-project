@@ -20,7 +20,7 @@ const Banner = ({handleSearch}) => {
                 onChange={(e)=>setSearch(e.target.value)}
                 type="text"  
                 className='border md:w-1/2 p-3 rounded-2xl outline-0 border-gray-500 shadow' placeholder='Search Phone by Name' />
-               <div className='flex justify-center'><Button  name={"Search"}></Button> </div>
+               <div className='flex justify-center'><Button type='submit'  name={"Search"}></Button> </div>
             </form>
         </div>
     );

@@ -25,4 +25,14 @@ const addToLocalStored = (id) =>{
     }
 }
 
-export{addToLocalStored as addLocalStored, getItemFromLocalStorage as getLocalStore}
+const removeFormLocalStorage = id =>{
+
+    const storedItems = getItemFromLocalStorage();
+    const remaingingItem = storedItems.filter(phone=> phone !== id);
+    saveToLocalStored(remaingingItem)
+}
+
+export{addToLocalStored as addLocalStored, getItemFromLocalStorage as getLocalStore,
+    removeFormLocalStorage
+
+}

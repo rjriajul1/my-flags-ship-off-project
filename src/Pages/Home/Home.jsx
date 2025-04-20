@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Banner from '../../components/banner/Banner';
 import { useLoaderData } from 'react-router';
 import Phones from '../phones/Phones';
+import EmptyState from '../../components/emptyState/EmptyState';
 
 const Home = () => {
     const data = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
    
     return (
         <div>
+         
             <Banner handleSearch={handleSearch}/>
             <Phones Phones={phoneData}/>
         </div>
