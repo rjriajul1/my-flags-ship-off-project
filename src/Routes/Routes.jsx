@@ -26,6 +26,7 @@ import ErrorMessage from "../Pages/ErrorMessage";
         },
         {
             path:'phoneDetails/:id',
+            hydrateFallbackElement:<p>Loading....</p>,
             loader:()=> fetch('../Phones.json'),
             Component:PhoneDetails
         },

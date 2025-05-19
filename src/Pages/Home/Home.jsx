@@ -8,14 +8,16 @@ const Home = () => {
     const data = useLoaderData();
 
     const [phoneData, setPhoneData] = useState(data)
+    console.log(phoneData);
    
     const handleSearch = (e,text) =>{
+        console.log(text);
         e.preventDefault();
         if(text === '') return setPhoneData(data)
-       const searchPhones = phoneData.filter(phone=>phone.name.toLowerCase().split(' ').includes(text.toLowerCase()) ||
-       phone.brand.toLowerCase().split(' ').includes(text.toLowerCase())
+       const searchPhones = phoneData.filter(phone=>phone.name.toLowerCase().includes(text.toLowerCase()) ||
+       phone.brand.toLowerCase().includes(text.toLowerCase())
     ) 
-       
+       console.log(searchPhones);
        setPhoneData(searchPhones)
 
     }
